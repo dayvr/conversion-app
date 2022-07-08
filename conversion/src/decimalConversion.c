@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <math.h>
 #include "conversion.h"
 
+// Read number from the user
 void getNumber() {
-    printf("ENTER A DECIMAL NUMBER: ");
+    printf("ENTER DECIMAL NUMBER: ");
     scanf("%d", &decimal);
     number = decimal;
 }
@@ -22,18 +24,19 @@ void decimalToBinary(){
     }
 
     // Print array in reverse order
-    printf("RESULT: %d = ", number);
+    puts("_________________________________________");
+    printf("RESULT\n      %d = ", number);
     for(i = i-1; i >= 0; i--) {
         printf("%d",binary[i]);
     }
-    puts("b");
+    puts("\n_________________________________________\n");
 }
 
+// Convert decimal number to hexadecimal number
 void decimalToHexa() {
     const char hexaDigits[] = "0123456789ABCDEF";
     char hexaNum[17];
-    int remainder;
-    int i = 0;
+    int remainder, i = 0;
     
     getNumber();
 
@@ -44,10 +47,11 @@ void decimalToHexa() {
         i++;
     }
 
-    printf("RESULT: %d = 0x", number);
+    puts("_________________________________________");
+    printf("RESULT\n      %d = ", number);
     for(i = i-1; i >= 0; i--) {
         printf("%c", hexaNum[i]);
     }
-
+    puts("\n_________________________________________\n");
 }
 

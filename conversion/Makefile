@@ -11,7 +11,7 @@ LIBS=-lm
 _DEPS = conversion.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o menu.o decimalConversion.o 
+_OBJ = main.o menu.o decimalConversion.o binaryConversion.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS) obj

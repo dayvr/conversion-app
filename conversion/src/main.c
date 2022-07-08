@@ -20,6 +20,20 @@ int main() {
         puts("_________________________________________");
         decimalToHexa();
         break;
+
+    case 3:
+        puts("_________________________________________");
+        puts("          Binary to Decimal");
+        puts("_________________________________________");
+        binaryToDecimal();
+        break;
+
+    case 4:
+        puts("_________________________________________");
+        puts("          Binary to Hexadecimal");
+        puts("_________________________________________");
+        binaryToHexa();
+        break;
     
     default:
         break;
