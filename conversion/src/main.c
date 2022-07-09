@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "conversion.h"
 
 int main() {
@@ -34,9 +35,28 @@ int main() {
         puts("_________________________________________");
         binaryToHexa();
         break;
+
+    case 5:
+        puts("_________________________________________");
+        puts("          Hexadecimal to Decimal");
+        puts("_________________________________________");
+        hexaToDecimal();
+        break;
+
+    case 6:
+        puts("_________________________________________");
+        puts("          Hexadecimal to Binary");
+        puts("_________________________________________");
+        hexaToBinary();
+        break;
+
+    case 0:
+        puts("Exiting the program...\n");
+        exit(0);
     
     default:
-        break;
+        puts("ENTER A VALID OPTION PLEASE");
+        getOption();
     }
     return 0;
 }

@@ -2,19 +2,26 @@
 #include <math.h>
 #include "conversion.h"
 
+#define MAX 32
+
 // Read number from the user
-void getNumber() {
+int getNumber(void) {
+    int decimal, number;
+
     printf("ENTER DECIMAL NUMBER: ");
     scanf("%d", &decimal);
     number = decimal;
+    return decimal;
 }
 
 // Convert decimal number to binary number
-void decimalToBinary(){
-    int binary[32];
-    int i = 0;
+void decimalToBinary(void){
+    int binary[MAX];
+    int decimal, number, i = 0;
 
-    getNumber();
+    // Get number from user
+    decimal = getNumber();
+    number = decimal;
 
     // Find the remainder of the division by 2 and store it in the array, divide by 2 and get the quotient for next iteration
     while(decimal > 0) {
@@ -33,12 +40,13 @@ void decimalToBinary(){
 }
 
 // Convert decimal number to hexadecimal number
-void decimalToHexa() {
+void decimalToHexa(void) {
     const char hexaDigits[] = "0123456789ABCDEF";
-    char hexaNum[17];
-    int remainder, i = 0;
+    char hexaNum[MAX];
+    int decimal, number, remainder, i = 0;
     
-    getNumber();
+    decimal = getNumber();
+    number = decimal;
 
     while(decimal > 0) {
         remainder = decimal % 16;

@@ -11,7 +11,7 @@ void getBinary() {
 }
 
 // The decimal number is equal to the sum of binary digits times their power of 2
-// decimal = bd0×2^0 + bd1×2^1 + bd2×2^2 + ...
+// decimal = bd0×2^0 + bd1×2^1 + bd2×2^2 + ... 
 int fromBinaryToDecimal(void) {
     int i, remainder, decimalNum = 0;
     for(int i = 0; binary > 0; i++) {
@@ -32,6 +32,7 @@ void binaryToDecimal() {
 }
 
 // Convert binary to hexadecimal number
+// First, convert a binary into decimal, then into hexa using %X in printf statement
 void binaryToHexa() {
     getBinary();
     dNum = fromBinaryToDecimal();

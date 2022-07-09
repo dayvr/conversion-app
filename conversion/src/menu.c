@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "conversion.h"
 
+// Global variable
+int option;
+
 // Print the program menu
 void showMenu() {
     printf("\n");

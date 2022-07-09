@@ -11,11 +11,11 @@ LIBS=-lm
 _DEPS = conversion.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o menu.o decimalConversion.o binaryConversion.o
+_OBJ = main.o menu.o decimalConversion.o binaryConversion.o hexaConversion.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS) obj
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -g -c -o $@ $< $(CFLAGS)
 
 conversion: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
