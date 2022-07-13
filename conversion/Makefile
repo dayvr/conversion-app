@@ -8,13 +8,13 @@ LDIR =lib
 
 LIBS=-lm
 
-_DEPS = conversion.h
+_DEPS = menu.h decimalConversion.h binaryConversion.h hexaConversion.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = main.o menu.o decimalConversion.o binaryConversion.o hexaConversion.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-$(ODIR)/%.o: $(SDIR)/%.c $(DEPS) obj
+$(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 	$(CC) -g -c -o $@ $< $(CFLAGS)
 
 conversion: $(OBJ)
