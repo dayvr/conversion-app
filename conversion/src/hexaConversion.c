@@ -14,17 +14,8 @@ void getHex(char* h) {
     scanf("%s", h);
 }
 
-// // Making my own strupr()
-// // Dereferencing the pointer gives the first character in the string
-// char * strupr(char * str) {
-//   char * character = str;
-//   while(*character) {
-//     *character = toupper(*character);
-//     character++;
-//   }
-//   return str;
-// }
 
+// Check length of hex number, if greater than 8 characters print an error message
 int checkLen(char * s) {
     int count = 0;
     char * hnum = s;

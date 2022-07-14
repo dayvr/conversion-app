@@ -3,6 +3,7 @@
 #include "decimalConversion.h"
 #include "binaryConversion.h"
 #include "hexaConversion.h"
+#include "conversionTable.h"
 
 
 int main() {
@@ -10,7 +11,7 @@ int main() {
     do {
         showMenu();
         getOption();
-        while(option > 0 && option > 6) {
+        while(option > 0 && option > 7) {
             puts("=> ENTER A VALID OPTION PLEASE");
             puts("   CHOOSE AN OPTION BETWEEN 0 - 6");
             getOption();
@@ -60,6 +61,13 @@ int main() {
             hexaToBinary();
             break;
 
+        case 7:
+            puts("_________________________________________");
+            puts("          Conversion Table               ");
+            puts("_________________________________________");
+            conversionTable();
+            break;
+
         case 0:
             puts("Exiting the program...\n");
             exit(0);
@@ -72,5 +80,6 @@ int main() {
     scanf (" %c", &ch);
     
     } while (ch == 'y');
+
     return 0;
 }

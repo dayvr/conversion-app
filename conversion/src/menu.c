@@ -21,6 +21,7 @@ void showMenu() {
     puts("|      4. Binary to hexadecimal         |");
     puts("|      5. Hexadecimal to decimal        |");
     puts("|      6. Hexadecimal to binary         |");
+    puts("|      7. Conversion table              |");
     puts("|      0. Exit                          |");
     puts("|_______________________________________|");
     printf("\n");
