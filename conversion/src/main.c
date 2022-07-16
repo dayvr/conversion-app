@@ -5,17 +5,21 @@
 #include "hexaConversion.h"
 #include "conversionTable.h"
 
+void show() {
+    showMenu();
+    getOption();
+    while(option > 0 && option > 7) {
+        puts("=> ENTER A VALID OPTION PLEASE");
+        puts("   CHOOSE AN OPTION BETWEEN 0 - 6");
+        getOption();
+    }
+}
 
 int main() {
-    char ch;
+    int valid_input;
+	char user_input;     //handles user input, single character menu choice
     do {
-        showMenu();
-        getOption();
-        while(option > 0 && option > 7) {
-            puts("=> ENTER A VALID OPTION PLEASE");
-            puts("   CHOOSE AN OPTION BETWEEN 0 - 6");
-            getOption();
-        }
+        show();
 
         switch (option)
         {
@@ -76,10 +80,19 @@ int main() {
             break;
         }
 
-    printf ("Do you want to continue? (y/n): ");
-    scanf (" %c", &ch);
+	valid_input = 0;
+	while( valid_input == 0 ) {
+	    printf ("Do you want to continue? (y/n): ");
+		scanf("  %c", &user_input );
+		user_input = user_input;
+		if((user_input == 'y') || (user_input == 'n') ) {
+            valid_input = 1; // data is valid and loop is exited
+        } else {
+            printf("Error: Invalid choice\n");
+        }
+	}
     
-    } while (ch == 'y');
+    } while (user_input == 'y');
 
     return 0;
 }

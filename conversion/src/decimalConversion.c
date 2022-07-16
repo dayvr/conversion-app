@@ -7,10 +7,18 @@
 
 // Read number from the user
 int getNumber(void) {
-    int decimal;
+	int decimal, input, status;
 
-    printf("ENTER DECIMAL NUMBER: ");
-    scanf("%d", &decimal);
+	printf("Enter decimal number: ");
+	status = scanf("%d", &decimal); // Returns 1 if reading succesful
+	while(status!=1){
+		while((input=getchar()) != EOF && input != '\n');
+		printf("Invalid input... please enter a number: ");
+		status = scanf("%d", &decimal);
+	}
+
+	printf("Your number is %d\n", decimal);
+
     return decimal;
 }
 
@@ -35,7 +43,7 @@ void decimalToBinary(){
     for(i = i-1, j = 0; i >= 0; i--, j++) {
         sprintf(result+j, "%d", binary[i]);
     }
-    printResult("RESULT\n\t%d d = %s b\n", number, result);
+    printResult("\nRESULT: %d d = %s b\n", number, result);
 }
 
 // Convert decimal number to hexadecimal number
@@ -46,6 +54,5 @@ void decimalToHexa(void) {
     decimal = getNumber();
     sprintf(hexaNum,"%X",decimal);
 
-    printResult("RESULT\n\t%d d = 0x%s\n", decimal, hexaNum);
+    printResult("RESULT: %d d = 0x%s\n", decimal, hexaNum);
 }
-

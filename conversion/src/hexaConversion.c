@@ -24,11 +24,11 @@ int checkLen(char * s) {
         count++;
         hnum++;
         if(count > 8) {
-            puts("\n\t _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
-            puts("\t|                                 |");
-            puts("\t|   VALID HEX NUMBER IS 8 DIGITS  |");
-            puts("\t|   TRY AGAIN!                    |");
-            puts("\t|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|\n");
+            puts("\n _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
+            puts("|                                 |");
+            puts("|   VALID HEX NUMBER IS 8 DIGITS  |");
+            puts("|   TRY AGAIN!                    |");
+            puts("|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|\n");
             exit(0);
         }
     }
@@ -49,7 +49,7 @@ void hexaToDecimal(void) {
         printResult("RESULT: 0x%x = %u (%d)\n", h, h, h);
     } else {
         // Unsigned decimal number
-        printResult("RESULT: 0x%x = %u\n", h, h);
+        printResult("RESULT: 0x%x = %u d\n", h, h);
     }
 }
 

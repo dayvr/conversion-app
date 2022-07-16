@@ -7,8 +7,8 @@
 
 // Get a decimal number from the user and convert it to binary, hex and octal
 void conversionTable() {
-    int binary[LEN];
-    char result[LEN];
+    int b[LEN];
+    char binary[LEN];
     int decimal, number, i = 0, j;
 
     // Get number from user
@@ -17,18 +17,18 @@ void conversionTable() {
 
     // Find the remainder of the division by 2 and store it in the array, divide by 2 and get the quotient for next iteration
     while(decimal > 0) {
-        binary[i] = decimal % 2;
+        b[i] = decimal % 2;
         decimal /= 2;
         i++;
     }
 
     // Print array in reverse order
     for(i = i-1, j = 0; i >= 0; i--, j++) {
-        sprintf(result+j, "%d", binary[i]);
+        sprintf(binary+j, "%d", b[i]);
     }
 
     printf("\n\tDECIMAL ---> %d\n", number);
     printf("\tHEXA    ---> 0x%X\n", number);
     printf("\tOCTAL   ---> %o\n", number);
-    printf("\tBINARY  ---> %s\n\n", result);
+    printf("\tBINARY  ---> %s\n\n", binary);
 }

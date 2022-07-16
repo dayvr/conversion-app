@@ -37,7 +37,6 @@ void getOption() {
 void printResult(const char *format, ...) {
     va_list args;             // Declaring pointer to the argument list
     va_start(args, format);   // Initialize argument list
-    // puts("________________________________________");
     vprintf(format, args);    // Send formatted output to stdout using argument list passed
     puts("________________________________________");
     va_end(args);             // End of argument list traversal
