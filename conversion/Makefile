@@ -14,7 +14,7 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 _OBJ = main.o menu.o decimalConversion.o binaryConversion.o hexaConversion.o conversionTable.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-$(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
+$(ODIR)/%.o: $(SDIR)/%.c $(DEPS) obj
 	$(CC) -g -c -o $@ $< $(CFLAGS)
 
 conversion: $(OBJ)
