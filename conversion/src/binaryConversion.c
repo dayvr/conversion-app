@@ -26,22 +26,20 @@ char* itoa(int val, int base){
 // Read binary number from user
 void getBinary(int b) {
     int binary[MAX], i, status;
-    do {
-        printf("Enter binary number: ");
-        status = scanf("%d", &b);
+    printf("Enter binary number: ");
+    scanf("%d", &b);
 
-        // Check if the string entered by the user is a valid binary number
-        char sb[MAX];
-        strcpy(sb, itoa(b, 10));
-        while(sb[i] != '\0') {
-            if((sb[i] == '0' || sb[i] == '1') && strlen(sb) <= 40) {
-                continue;
-            } else {
-                printf("Invalid input... please enter a binary: ");
-                status = 0;
-            }
+    // Check if the string entered by the user is a valid binary number
+    char sb[MAX];
+    strcpy(sb, itoa(b, 10));
+    while(sb[i] != '\0') {
+        if((sb[i] == '0' || sb[i] == '1') && strlen(sb) <= 40) {
+            continue;
+        } else {
+            printf("Invalid input... please enter a binary: ");
+            status = 0;
         }
-    } while( status == 0);
+    }
 }
 
 // The decimal number is equal to the sum of binary digits times their power of 2
