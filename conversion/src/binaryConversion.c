@@ -8,62 +8,40 @@
 
 #define MAX 100
 
-char* itoa(int val, int base){
-	
-	static char buf[32] = {0};
-	
-	int i = 30;
-	
-	for(; val && i ; --i, val /= base)
-	
-		buf[i] = "0123456789abcdef"[val % base];
-	
-	return &buf[i+1];
-	
-}
-
-
-// Read binary number from user
-void getBinary(int b) {
-    int binary[MAX], i, status;
-    printf("Enter binary number: ");
-    scanf("%d", &b);
-
-    // Check if the string entered by the user is a valid binary number
-    char sb[MAX];
-    strcpy(sb, itoa(b, 10));
-    while(sb[i] != '\0') {
-        if((sb[i] == '0' || sb[i] == '1') && strlen(sb) <= 40) {
-            continue;
-        } else {
-            printf("Invalid input... please enter a binary: ");
-            status = 0;
+bool zeros_and_ones(long long n) {
+    for (; n != 0; n /= 10) {
+        int mod = n % 10;
+        if (0 != mod && 1 != mod) {
+            return false;
         }
     }
+    return true;
 }
 
-// The decimal number is equal to the sum of binary digits times their power of 2
-// decimal = bd0×2^0 + bd1×2^1 + bd2×2^2 + ... 
-int fromBinaryToDecimal(int binary) {
-    int i, remainder, decimalNum = 0;
+int convert(long long n) {
+  int dec = 0, i = 0, rem;
 
-    while(binary != 0) {
-        remainder = binary % 10;
-        decimalNum += remainder * pow(2, i);
-        binary /= 10;
-        i++;
-    }
-    return decimalNum;
+  while (n!=0) {
+    rem = n % 10;
+    n /= 10;
+    dec += rem * pow(2, i);
+    ++i;
+  }
+
+  return dec;
 }
 
-// Convert binary to decimal number
 void binaryToDecimal() {
-    int binary;
-    int dNum;
-
-    getBinary(binary);
-    dNum = fromBinaryToDecimal(binary);
-    // printResult("RESULT: %s = %d\n", bNumber, dNum);
+  long long n;
+  printf("Enter a binary number: ");
+  scanf("%lld", &n);
+  if(!zeros_and_ones(n)) {
+    puts("Not valid");
+    printf("Enter a binary number: ");
+    scanf("%lld", &n);
+    // exit(0);
+  }
+  printf("%lld in binary = %d in decimal\n", n, convert(n));
 }
 
 // Convert binary to hexadecimal number

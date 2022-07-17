@@ -16,8 +16,7 @@ void show() {
 }
 
 int main() {
-    int valid_input;
-	char user_input;     //handles user input, single character menu choice
+	char ch;
     do {
         show();
 
@@ -80,19 +79,10 @@ int main() {
             break;
         }
 
-	valid_input = 0;
-	while( valid_input == 0 ) {
 	    printf ("Do you want to continue? (y/n): ");
-		scanf("  %c", &user_input );
-		user_input = user_input;
-		if((user_input == 'y') || (user_input == 'n') ) {
-            valid_input = 1; // data is valid and loop is exited
-        } else {
-            printf("Error: Invalid choice\n");
-        }
-	}
+		scanf("%c", &ch);
     
-    } while (user_input == 'y');
+    } while (ch == 'y');
 
     return 0;
 }
