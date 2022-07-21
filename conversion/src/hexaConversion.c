@@ -2,16 +2,35 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "menu.h"
 
 #define MAX 100
 #define B 100
 #define H 32
 
+bool is_hexa(char *str) {
+	int i;
+	int len = strlen(str);
+
+	for (i = 0; i < len; i++) {
+		if (!((str[i] >= '0' && str[i] <= '9') ||
+			(str[i] >= 'a' && str[i] <= 'f') ||
+			(str[i] >= 'A' && str[i] <= 'F'))) {
+            puts("Not valid");
+			return false;
+        }
+	}
+
+	return true;
+}
+
 // Read hexadecimal number from user
 void getHex(char* h) {
-    printf("ENTER HEXA NUMBER: ");
-    scanf("%s", h);
+    do {
+        printf("ENTER HEXA NUMBER: ");
+        scanf("%s", h);
+    } while (!(is_hexa(h)));
 }
 
 

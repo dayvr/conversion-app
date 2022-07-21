@@ -4,21 +4,15 @@
 #include <stdbool.h>
 
 // Read binary number from user
-void getBinary(int b);
+void get_binary(char b);
 
 // Convert binary to decimal number
-void binaryToDecimal(void);
+int binary_to_decimal(void);
 
-// Convert binary to hexadecimal number
-void binaryToHexa(void);
+// Convert binary to hex number
+void binary_to_hexa(void);
 
-// Convert binary to decimal number
-int fromBinaryToDecimal(char b[]);
-
-// Check if length of the binary number is greater than 32 if it is shows a message and exit the program
-int checkBinary(char * s);
-
-// Check if the string entered by the user is a valid binary number
-bool isBinary(const char *input);
+// Check if input is a valid binary number
+bool is_binary(char *str);
 
 #endif /* BINARYCONVERSION_H_ */

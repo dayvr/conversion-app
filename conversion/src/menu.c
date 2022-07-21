@@ -28,9 +28,11 @@ void showMenu() {
 }
 
 // Read the menu option from the user
-void getOption() {
+int getOption() {
+    int i;
     printf("ENTER AN OPTION: ");
-    scanf("%d", &option);
+    i = scanf("%d", &option);
+    return i;
 }
 
 // Variadic function that can take a variable number of arguments for wrapping printf()
@@ -40,4 +42,15 @@ void printResult(const char *format, ...) {
     vprintf(format, args);    // Send formatted output to stdout using argument list passed
     puts("________________________________________");
     va_end(args);             // End of argument list traversal
+}
+
+char askToContinue() {
+    char ch;
+    do {
+        fflush(stdin);
+        printf("Do you want to continue? (y/n): ");
+    	scanf("%c", &ch);
+    } while (ch != 'y' && ch != 'n');
+
+    return ch;
 }

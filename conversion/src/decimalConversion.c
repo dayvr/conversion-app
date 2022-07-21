@@ -11,13 +11,15 @@ int getNumber(void) {
 
 	printf("Enter decimal number: ");
 	status = scanf("%d", &decimal); // Returns 1 if reading succesful
-	while(status!=1){
+	
+    // Input validation
+    while(status!=1){
 		while((input=getchar()) != EOF && input != '\n');
-		printf("Invalid input... please enter a number: ");
+		printf("\nInvalid input\nEnter a number: ");
 		status = scanf("%d", &decimal);
 	}
-
-	printf("Your number is %d\n", decimal);
+	
+    printf("\nYour number is %d\n", decimal);
 
     return decimal;
 }

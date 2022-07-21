@@ -1,28 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "decimalConversion.h"
 #include "binaryConversion.h"
 #include "hexaConversion.h"
 #include "conversionTable.h"
-
-void show() {
-    showMenu();
-    getOption();
-    while(option > 0 && option > 7) {
-        puts("=> ENTER A VALID OPTION PLEASE");
-        puts("   CHOOSE AN OPTION BETWEEN 0 - 6");
-        getOption();
-    }
-}
+#include "menu.h"
 
 int main() {
 	char ch;
     do {
-        show();
-
-        switch (option)
-        {
-        case 1:
+        showMenu();
+        getOption();
+        while ((option > 0 && option > 7) || option < 0) {
+            puts("=> ENTER A VALID OPTION PLEASE");
+            puts("   CHOOSE AN OPTION BETWEEN 0 - 7");
+            getOption();
+        }
+        switch (option){
+         case 1:
             puts("_________________________________________");
             puts("          Decimal to Binary");
             puts("_________________________________________");
@@ -40,14 +36,14 @@ int main() {
             puts("_________________________________________");
             puts("          Binary to Decimal");
             puts("_________________________________________");
-            binaryToDecimal();
+            binary_to_decimal();
             break;
 
         case 4:
             puts("_________________________________________");
             puts("          Binary to Hexadecimal");
             puts("_________________________________________");
-            binaryToHexa();
+            binary_to_hexa();
             break;
 
         case 5:
@@ -79,10 +75,8 @@ int main() {
             break;
         }
 
-	    printf ("Do you want to continue? (y/n): ");
-		scanf("%c", &ch);
-    
-    } while (ch == 'y');
+        ch = askToContinue();
+    } while(ch == 'y');
 
     return 0;
 }

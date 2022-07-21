@@ -8,7 +8,7 @@ extern int option;
 void showMenu(void);
 
 // Read the menu option from the user
-void getOption(void);
+int getOption(void);
 
 // Read decimal number from the user
 int getNumber(void);
